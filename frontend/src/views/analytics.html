@@ -1,0 +1,1314 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          background-color: #0f131c;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#181c24",
+              outline: "#849495",
+              "on-secondary-fixed-variant": "#005236",
+              "on-surface-variant": "#b9cacb",
+              "outline-variant": "#3a494b",
+              surface: "#0f131c",
+              "secondary-fixed-dim": "#4edea3",
+              "on-error": "#690005",
+              "inverse-surface": "#dfe2ee",
+              "surface-tint": "#00dce6",
+              "primary-fixed": "#6ff6ff",
+              "tertiary-fixed": "#ffddb8",
+              "secondary-fixed": "#6ffbbe",
+              "on-secondary-container": "#00311f",
+              "tertiary-container": "#ffd3a1",
+              "on-surface": "#dfe2ee",
+              error: "#ffb4ab",
+              "primary-container": "#00f2fe",
+              "on-tertiary-container": "#875400",
+              "surface-container-lowest": "#0a0e16",
+              "primary-fixed-dim": "#00dce6",
+              background: "#0f131c",
+              "on-secondary-fixed": "#002113",
+              "surface-dim": "#0f131c",
+              "on-tertiary": "#472a00",
+              "surface-container-high": "#262a33",
+              "surface-variant": "#31353e",
+              "on-primary-fixed": "#002022",
+              "surface-bright": "#353942",
+              "on-secondary": "#003824",
+              "on-tertiary-fixed": "#2a1700",
+              "on-primary-container": "#006a70",
+              primary: "#e0fdff",
+              "on-primary": "#00373a",
+              "surface-container-highest": "#31353e",
+              "tertiary-fixed-dim": "#ffb95f",
+              "inverse-primary": "#00696f",
+              "on-background": "#dfe2ee",
+              "inverse-on-surface": "#2c3039",
+              "on-tertiary-fixed-variant": "#653e00",
+              "secondary-container": "#00a572",
+              "error-container": "#93000a",
+              secondary: "#4edea3",
+              tertiary: "#fff5ee",
+              "surface-container": "#1c2028",
+              "on-primary-fixed-variant": "#004f53",
+              "on-error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              margin: "1rem",
+              gutter: "0.75rem",
+              "space-sm": "0.5rem",
+              "space-xs": "0.25rem",
+              "space-md": "0.75rem",
+              "space-lg": "1.25rem",
+              "space-xl": "1.75rem",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "body-sm": ["Inter"],
+              "telemetry-xl": ["JetBrains Mono"],
+              "headline-md": ["Space Grotesk"],
+              "label-sm": ["JetBrains Mono"],
+              "telemetry-md": ["JetBrains Mono"],
+              "body-md": ["Inter"],
+              "display-hero": ["Space Grotesk"],
+              "display-hero-mobile": ["Space Grotesk"],
+              "headline-lg-mobile": ["Space Grotesk"],
+              "label-caps": ["JetBrains Mono"],
+              "headline-lg": ["Space Grotesk"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "telemetry-xl": [
+                "44px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "12px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "400",
+                },
+              ],
+              "telemetry-md": [
+                "20px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero": [
+                "64px",
+                {
+                  lineHeight: "68px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero-mobile": [
+                "48px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-caps": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"
+  >
+    <header
+      class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+    >
+      <div class="h-16 px-margin flex items-center justify-between">
+        <div class="flex items-center gap-space-sm">
+          <img
+            alt="ApexAngle Logo"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W2czp8ivlVh3FJqoRtcyArMoR6UEDnJs6FDqjdnX_WKUOl2gKIg462i_Uk18xZwYTB-ul9bFDCJRaDBQ_XIM2iRWRGYNYjcJKQqsWYuTRdDkDGR5jFwe6xMaFdWlevrUamKdREDfr9azkTCXAsGkqolrAwgq9H4-ByAk9WcxnrB-RV9Bh7MUn-okndifLgNngqvw9nrk7zW38RSfcpu5J7sWP7Tni3sEvOukFOmPSBT6_Av8OP0nkdLsU"
+          />
+          <div class="flex flex-col">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-md text-headline-md font-bold tracking-tight text-primary leading-none"
+                >ApexAngle</span
+              ><span class="hidden">Analytics</span>
+            </div>
+            <div class="flex items-center gap-1.5 mt-0.5">
+              <span class="relative flex h-2 w-2"
+                ><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"
+                ></span
+                ><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-secondary"
+                ></span></span
+              ><span
+                class="font-label-sm text-label-sm text-secondary font-telemetry-md uppercase tracking-wider"
+                >BLE: CONNECTED (100Hz)</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm">
+          <button
+            aria-label="Rider Profile"
+            class="w-11 h-11 rounded-full flex items-center justify-center bg-surface-container-high/60 backdrop-blur-md p-0.5"
+          >
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSNUUBry4d6Qg0zIjcHdis8b5-kX08q6fxnS-S3uV7B0Z0V7eKqlKr5il4gTOodgs1iVKFfqrKKJ3nlaIZvLr18Mp0iC-Nu3R4Y4OOgim10qRQJhOzH_zVoA5V3DsiFFStBADtPVXpVT8XT01qDw9rs98yPiUQ7mBVK3U2W-gC6lFSRE_8ysqOxm-aHBDCkH_U1a2wvEF8l8dL3n6jOT8Dn6LOaHmWBrf24TLiaBB0HwpPrwOMv1Uh"
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main
+      class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"
+    >
+      <div class="flex flex-col w-full">
+        <!-- Track Session Banner with Ambient Glass Profile -->
+        <div class="px-margin pt-space-md pb-space-xs">
+          <div
+            class="relative w-full rounded-xl bg-surface-container-low shadow-xl p-space-md overflow-hidden"
+          >
+            <div
+              class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-primary-container/10 blur-2xl pointer-events-none"
+            ></div>
+            <div
+              class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"
+            ></div>
+            <div
+              class="flex items-center justify-between gap-space-sm mb-space-xs"
+            >
+              <div
+                class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-caps text-label-caps uppercase tracking-wider"
+              >
+                <span class="material-symbols-outlined text-[14px]"
+                  >sports_score</span
+                >
+                <span>Sesión Guardada</span>
+              </div>
+              <div
+                class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-[14px] text-secondary"
+                  >check_circle</span
+                >
+                <span class="font-telemetry-md text-secondary uppercase"
+                  >Sincronizado</span
+                >
+              </div>
+            </div>
+            <!-- Session Title & Dropdown Trigger -->
+            <div class="flex items-start justify-between gap-2 mt-1">
+              <div>
+                <h2
+                  class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight"
+                >
+                  Circuito de Jerez
+                </h2>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                >
+                  Tanda 3 • 28 Oct (16:45) • 18 Vueltas Completadas
+                </p>
+              </div>
+              <button
+                aria-label="Cambiar sesión"
+                class="w-10 h-10 rounded-lg bg-surface-container-high text-primary-container flex items-center justify-center shadow-md active:scale-95 transition-transform"
+                id="session-select-btn"
+              >
+                <span class="material-symbols-outlined text-[20px]"
+                  >swap_horiz</span
+                >
+              </button>
+            </div>
+            <!-- Quick Session Meta Badges -->
+            <div
+              class="flex items-center gap-2 mt-space-md pt-space-xs flex-wrap"
+            >
+              <div
+                class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface"
+              >
+                <span
+                  class="material-symbols-outlined text-[15px] text-primary-fixed-dim"
+                  >timer</span
+                >
+                <span class="font-telemetry-md text-label-caps"
+                  >MEJOR: 1:44.218</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface"
+              >
+                <span
+                  class="material-symbols-outlined text-[15px] text-tertiary-fixed-dim"
+                  >thermostat</span
+                >
+                <span class="font-telemetry-md text-label-caps"
+                  >PISTA: 31°C</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface"
+              >
+                <span
+                  class="material-symbols-outlined text-[15px] text-secondary"
+                  >navigation</span
+                >
+                <span class="font-telemetry-md text-label-caps"
+                  >SECO / ÓPTIMO</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Hero Visual Indicator / Inspiring Gauge Widget -->
+        <div class="px-margin mt-space-sm">
+          <div
+            class="w-full bg-surface-container-low rounded-xl p-space-md shadow-lg flex items-center justify-between gap-space-sm relative overflow-hidden"
+          >
+            <!-- Dial Visual Graphic derived from user inspiration -->
+            <div
+              class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center"
+            >
+              <svg class="w-28 h-28 transform -rotate-90" viewbox="0 0 100 100">
+                <!-- Background Outer Circle -->
+                <circle
+                  cx="50"
+                  cy="50"
+                  fill="none"
+                  r="44"
+                  stroke="#262a33"
+                  stroke-width="6"
+                ></circle>
+                <!-- Dial Ticks Arc Left/Right -->
+                <circle
+                  cx="50"
+                  cy="50"
+                  fill="none"
+                  r="32"
+                  stroke="#3a494b"
+                  stroke-dasharray="3 4.5"
+                  stroke-width="3.5"
+                ></circle>
+                <!-- Neon Active Dash Track -->
+                <circle
+                  cx="50"
+                  cy="50"
+                  fill="none"
+                  r="32"
+                  stroke="#00f2fe"
+                  stroke-dasharray="3.5 4"
+                  stroke-dashoffset="36"
+                  stroke-linecap="round"
+                  stroke-width="4.5"
+                ></circle>
+                <!-- Center Reference Line -->
+                <line
+                  stroke="#849495"
+                  stroke-dasharray="2 2"
+                  stroke-width="2"
+                  x1="50"
+                  x2="50"
+                  y1="18"
+                  y2="34"
+                ></line>
+              </svg>
+              <!-- Dial Needle Indicator (Pointing to max lean) -->
+              <div
+                class="absolute w-20 h-20 flex items-center justify-center pointer-events-none"
+                style="transform: rotate(48deg)"
+              >
+                <div
+                  class="w-1.5 h-9 bg-primary-container rounded-full shadow-[0_0_8px_#00f2fe] mb-7"
+                ></div>
+                <div
+                  class="absolute w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_6px_#00f2fe]"
+                ></div>
+              </div>
+              <!-- Max Indicator Chevron in Dial Center -->
+              <div class="absolute flex flex-col items-center bottom-2.5">
+                <span
+                  class="material-symbols-outlined text-secondary text-[16px] leading-none"
+                  >expand_less</span
+                >
+                <span
+                  class="font-label-caps text-[9px] text-on-surface-variant font-bold tracking-widest leading-none"
+                  >54° MAX</span
+                >
+              </div>
+            </div>
+            <!-- Quick Horizon Summary Notes -->
+            <div class="flex flex-col justify-center flex-1 pl-space-xs">
+              <span
+                class="font-label-caps text-label-caps uppercase text-primary-container tracking-wider"
+                >Perfil Dinámico de Tanda</span
+              >
+              <div
+                class="font-headline-md text-headline-md font-bold text-on-surface leading-tight mt-0.5"
+              >
+                53.8° / 51.2°
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Simetría de viraje al
+                <span class="text-secondary font-telemetry-md font-bold"
+                  >95.2%</span
+                >. Transición de frenada a punto de ápice dentro de parámetros
+                ideales.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Key Metrics KPI Bento Grid (4 modular telemetry cards) -->
+        <div class="px-margin mt-space-sm">
+          <div class="grid grid-cols-2 gap-gutter">
+            <!-- KPI 1: Max Left -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-16 h-16 bg-primary-container/5 rounded-bl-full pointer-events-none"
+              ></div>
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider"
+                  >Máx Izquierda</span
+                >
+                <span
+                  class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold"
+                  >C6</span
+                >
+              </div>
+              <div class="mt-space-sm">
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-telemetry-xl text-telemetry-xl font-bold text-primary-container tracking-tight"
+                    >53.8</span
+                  >
+                  <span
+                    class="font-telemetry-md text-telemetry-md text-on-surface-variant"
+                    >°</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5"
+                  >Curva 6 (Dry Sack)</span
+                >
+              </div>
+            </div>
+            <!-- KPI 2: Max Right -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-bl-full pointer-events-none"
+              ></div>
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider"
+                  >Máx Derecha</span
+                >
+                <span
+                  class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold"
+                  >C5</span
+                >
+              </div>
+              <div class="mt-space-sm">
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-telemetry-xl text-telemetry-xl font-bold text-secondary font-telemetry-md tracking-tight"
+                    >51.2</span
+                  >
+                  <span
+                    class="font-telemetry-md text-telemetry-md text-on-surface-variant"
+                    >°</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5"
+                  >Curva 5 (Sito Pons)</span
+                >
+              </div>
+            </div>
+            <!-- KPI 3: Lateral G Peak -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative overflow-hidden"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider"
+                  >Fuerza G Lateral</span
+                >
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]"
+                  >motion_photos_on</span
+                >
+              </div>
+              <div class="mt-space-sm">
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-telemetry-xl text-telemetry-xl font-bold text-on-surface tracking-tight"
+                    >1.42</span
+                  >
+                  <span
+                    class="font-telemetry-md text-telemetry-md text-tertiary-fixed-dim font-bold"
+                    >G</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5"
+                  >Pico en C13 (Jorge Lorenzo)</span
+                >
+              </div>
+            </div>
+            <!-- KPI 4: Time > 40 degrees -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative overflow-hidden"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider"
+                  >Tiempo &gt;40°</span
+                >
+                <span
+                  class="px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary-fixed-dim font-label-sm text-label-sm font-bold"
+                  >Óptimo</span
+                >
+              </div>
+              <div class="mt-space-sm">
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="font-telemetry-xl text-telemetry-xl font-bold text-primary-fixed tracking-tight"
+                    >34</span
+                  >
+                  <span
+                    class="font-telemetry-md text-telemetry-md text-primary-fixed-dim"
+                    >%</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5"
+                  >35.4 seg por vuelta</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Interactive Telemetry Graph Card -->
+        <div class="px-margin mt-space-md">
+          <div
+            class="bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-col"
+          >
+            <!-- Graph Header & Toggles -->
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3
+                    class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight"
+                  >
+                    Vuelta 7 (Récord Personal)
+                  </h3>
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Traza continua de Inclinación vs. Velocidad</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-1.5 bg-surface-container-high p-1 rounded-lg"
+                >
+                  <button
+                    class="px-2 py-1 rounded bg-surface-container text-primary-container font-label-caps text-label-caps font-bold"
+                  >
+                    V7
+                  </button>
+                  <button
+                    class="px-2 py-1 rounded text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface"
+                  >
+                    V11
+                  </button>
+                  <button
+                    class="px-2 py-1 rounded text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface"
+                  >
+                    V14
+                  </button>
+                </div>
+              </div>
+              <!-- Legend -->
+              <div class="flex items-center gap-4 mt-1">
+                <div class="flex items-center gap-1.5">
+                  <div
+                    class="w-3 h-1 rounded-full bg-primary-container shadow-[0_0_6px_#00f2fe]"
+                  ></div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Inclinación (°)</span
+                  >
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <div class="w-3 h-1 rounded-full bg-secondary"></div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Velocidad (km/h)</span
+                  >
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <div class="w-3 h-0.5 bg-error"></div>
+                  <span class="font-label-sm text-label-sm text-error"
+                    >Límite Agarre (54.5°)</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Graph Canvas Container -->
+            <div
+              class="relative w-full h-52 mt-space-md bg-surface-container-lowest rounded-lg p-2 overflow-hidden flex flex-col justify-end"
+            >
+              <!-- Grip Threshold Warning Line at Top -->
+              <div
+                class="absolute top-7 left-0 right-0 flex items-center z-10 px-2 pointer-events-none"
+              >
+                <div
+                  class="w-full border-t border-error/50 border-dashed"
+                ></div>
+                <span
+                  class="px-1.5 py-0.5 ml-1 bg-error-container text-error font-label-sm text-[9px] rounded font-bold uppercase whitespace-nowrap"
+                  >Límite 54.5°</span
+                >
+              </div>
+              <!-- Y-Axis Background Grid Lines -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between p-3 pointer-events-none opacity-20"
+              >
+                <div class="w-full border-b border-outline"></div>
+                <div class="w-full border-b border-outline"></div>
+                <div class="w-full border-b border-outline"></div>
+                <div class="w-full border-b border-outline"></div>
+              </div>
+              <!-- Corner Tags for Track Sections Along Time Domain -->
+              <div
+                class="absolute top-2 left-3 flex gap-3 text-on-surface-variant font-label-sm text-[10px] pointer-events-none"
+              >
+                <span class="text-primary-fixed-dim">C1 Expo</span>
+                <span class="text-primary-fixed-dim ml-5">C2 Michelin</span>
+                <span class="text-primary-fixed-dim ml-8">C5 Sito Pons</span>
+                <span class="text-error ml-8">C6 Dry Sack</span>
+                <span class="text-primary-fixed-dim ml-8">C13 Lorenzo</span>
+              </div>
+              <!-- Inline SVG Telemetry Line Charts -->
+              <svg
+                class="w-full h-40 overflow-visible z-0"
+                preserveaspectratio="none"
+                viewbox="0 0 320 140"
+              >
+                <defs>
+                  <!-- Cyan Lean Gradient -->
+                  <lineargradient id="leanGrad" x1="0" x2="0" y1="0" y2="1">
+                    <stop
+                      offset="0%"
+                      stop-color="#00f2fe"
+                      stop-opacity="0.35"
+                    ></stop>
+                    <stop
+                      offset="100%"
+                      stop-color="#00f2fe"
+                      stop-opacity="0.0"
+                    ></stop>
+                  </lineargradient>
+                  <!-- Emerald Speed Gradient -->
+                  <lineargradient id="speedGrad" x1="0" x2="0" y1="0" y2="1">
+                    <stop
+                      offset="0%"
+                      stop-color="#4edea3"
+                      stop-opacity="0.2"
+                    ></stop>
+                    <stop
+                      offset="100%"
+                      stop-color="#4edea3"
+                      stop-opacity="0.0"
+                    ></stop>
+                  </lineargradient>
+                </defs>
+                <!-- Speed Curve Area & Path (Inverted profile relative to lean angle) -->
+                <path
+                  d="M 0,25 Q 30,30 45,95 T 90,30 T 140,110 T 190,15 T 235,115 T 285,45 T 320,20 L 320,140 L 0,140 Z"
+                  fill="url(#speedGrad)"
+                ></path>
+                <path
+                  d="M 0,25 Q 30,30 45,95 T 90,30 T 140,110 T 190,15 T 235,115 T 285,45 T 320,20"
+                  fill="none"
+                  stroke="#4edea3"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+                <!-- Lean Angle Curve Area & Path -->
+                <path
+                  d="M 0,135 Q 25,130 45,35 T 90,125 T 140,25 T 190,135 T 235,18 T 285,100 T 320,135 L 320,140 L 0,140 Z"
+                  fill="url(#leanGrad)"
+                ></path>
+                <path
+                  d="M 0,135 Q 25,130 45,35 T 90,125 T 140,25 T 190,135 T 235,18 T 285,100 T 320,135"
+                  fill="none"
+                  stroke="#00f2fe"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                ></path>
+                <!-- Dynamic Inspection Marker at Peak Lean Point (C6 Dry Sack) -->
+                <g transform="translate(235, 18)">
+                  <line
+                    stroke="#00f2fe"
+                    stroke-dasharray="2 2"
+                    stroke-width="1.5"
+                    x1="0"
+                    x2="0"
+                    y1="-10"
+                    y2="122"
+                  ></line>
+                  <circle
+                    cx="0"
+                    cy="0"
+                    fill="#00f2fe"
+                    r="4.5"
+                    stroke="#0f131c"
+                    stroke-width="2"
+                  ></circle>
+                  <!-- Peak Indicator Badge -->
+                  <rect
+                    fill="#181c24"
+                    height="18"
+                    rx="4"
+                    stroke="#00f2fe"
+                    stroke-width="1"
+                    width="48"
+                    x="-24"
+                    y="-22"
+                  ></rect>
+                  <text
+                    fill="#e0fdff"
+                    font-family="'JetBrains Mono'"
+                    font-size="9"
+                    font-weight="bold"
+                    text-anchor="middle"
+                    x="0"
+                    y="-10"
+                  >
+                    53.8°
+                  </text>
+                </g>
+              </svg>
+              <!-- Dynamic Scrubber Hover Bar / Telemetry Inspector -->
+              <div
+                class="w-full flex items-center justify-between pt-1 font-label-sm text-label-sm text-on-surface-variant"
+                id="graph-inspector"
+              >
+                <span>00:00 s</span>
+                <span class="text-primary-container font-telemetry-md"
+                  >Cursor: C6 @ 01:14.3s (53.8° L • 89 km/h)</span
+                >
+                <span>01:44.2 s</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sectors & Corner Breakdown Table -->
+        <div class="px-margin mt-space-md">
+          <div
+            class="bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-col"
+          >
+            <div class="flex items-center justify-between mb-space-xs">
+              <div>
+                <h3
+                  class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight"
+                >
+                  Desglose de Curvas y Sectores
+                </h3>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Velocidad en ápice y grados máximos</span
+                >
+              </div>
+              <span
+                class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase"
+                >13 Curvas</span
+              >
+            </div>
+            <!-- Sector Tab Switcher -->
+            <div
+              class="flex items-center gap-1 mt-space-xs mb-space-sm bg-surface-container-high p-1 rounded-lg"
+            >
+              <button
+                class="flex-1 py-1 text-center rounded bg-surface-container text-primary font-label-caps text-label-caps font-bold"
+              >
+                Sector 1
+              </button>
+              <button
+                class="flex-1 py-1 text-center rounded text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface"
+              >
+                Sector 2
+              </button>
+              <button
+                class="flex-1 py-1 text-center rounded text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface"
+              >
+                Sector 3
+              </button>
+            </div>
+            <!-- Corner Cards List -->
+            <div class="flex flex-col gap-space-xs">
+              <!-- Row 1: C1 Curva Expo -->
+              <div
+                class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"
+              >
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-telemetry-md text-label-caps font-bold text-primary"
+                  >
+                    C1
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-body-md text-body-md text-on-surface font-semibold leading-tight"
+                      >Curva Expo</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Derecha • Rápida</span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 text-right">
+                  <div>
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Ápice</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-on-surface font-bold"
+                      >114
+                      <span
+                        class="text-label-sm text-on-surface-variant font-normal"
+                        >km/h</span
+                      ></span
+                    >
+                  </div>
+                  <div class="min-w-[54px]">
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Pico</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-secondary font-bold"
+                      >46.4°
+                      <span class="text-label-sm font-normal">D</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Row 2: C2 Curva Michelin -->
+              <div
+                class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"
+              >
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-telemetry-md text-label-caps font-bold text-primary"
+                  >
+                    C2
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-body-md text-body-md text-on-surface font-semibold leading-tight"
+                      >Curva Michelin</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Derecha • Media</span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 text-right">
+                  <div>
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Ápice</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-on-surface font-bold"
+                      >96
+                      <span
+                        class="text-label-sm text-on-surface-variant font-normal"
+                        >km/h</span
+                      ></span
+                    >
+                  </div>
+                  <div class="min-w-[54px]">
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Pico</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-secondary font-bold"
+                      >48.9°
+                      <span class="text-label-sm font-normal">D</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Row 3: C5 Curva Sito Pons -->
+              <div
+                class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"
+              >
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-secondary/15 text-secondary flex items-center justify-center font-telemetry-md text-label-caps font-bold"
+                  >
+                    C5
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-body-md text-body-md text-on-surface font-semibold leading-tight"
+                      >Sito Pons</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >Máx Tanda Der</span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 text-right">
+                  <div>
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Ápice</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-on-surface font-bold"
+                      >128
+                      <span
+                        class="text-label-sm text-on-surface-variant font-normal"
+                        >km/h</span
+                      ></span
+                    >
+                  </div>
+                  <div class="min-w-[54px]">
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Pico</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-secondary font-bold"
+                      >51.2°
+                      <span class="text-label-sm font-normal">D</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Row 4: C6 Curva Dry Sack -->
+              <div
+                class="flex items-center justify-between p-2.5 rounded-lg bg-primary-container/10 transition-colors"
+              >
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-telemetry-md text-label-caps font-bold"
+                  >
+                    C6
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-body-md text-body-md text-primary-container font-semibold leading-tight"
+                      >Dry Sack</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-primary-fixed-dim"
+                      >Horquilla Izquierda (Récord)</span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 text-right">
+                  <div>
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant uppercase block text-[9px]"
+                      >Ápice</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-on-surface font-bold"
+                      >64
+                      <span
+                        class="text-label-sm text-on-surface-variant font-normal"
+                        >km/h</span
+                      ></span
+                    >
+                  </div>
+                  <div class="min-w-[54px]">
+                    <span
+                      class="font-label-caps text-label-caps text-primary-container uppercase block text-[9px]"
+                      >Pico</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md text-primary-container font-bold"
+                      >53.8°
+                      <span class="text-label-sm font-normal">I</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Session Photos & Paddock Track Mood -->
+        <div class="px-margin mt-space-md">
+          <div class="flex items-center justify-between mb-space-xs">
+            <span
+              class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider"
+              >Bitácora &amp; Condiciones</span
+            >
+            <span class="font-label-sm text-label-sm text-primary"
+              >2 Registros Fotográficos</span
+            >
+          </div>
+          <div class="grid grid-cols-2 gap-gutter">
+            <div
+              class="relative h-28 rounded-xl overflow-hidden bg-surface-container shadow-md"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="High performance superbike motorcycle leaning low inside the asphalt apex corner of Circuito de Jerez in golden hour sunlight, dynamic motion blur, carbon fiber details, vivid sports photography."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1QFtlaavnml5Wf8oLy52sRUDtkoQrIfJmaIGyEGhwH5WvwLvOTo8Qn7TZ2VovQ6t2uGD7KuBKUVpqlWEX0TTca1eO8wnBjvxdFDUNHNmGca3gqGS3aIODoYRpv5m2aZiV3vD_WaNOU3BnOg3HgE2c3DVzyDo4jrB-emwUMoxlFPDKWtGlVQhv86Ncx8yDtxM5bqZ4RBAb-njgXq6w1lvgD99APzgtzHPLzF2hG4diWUvzazDUHurU"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent flex items-end p-2"
+              >
+                <span
+                  class="font-label-sm text-[10px] text-primary-container font-telemetry-md"
+                  >C6 Dry Sack Entry</span
+                >
+              </div>
+            </div>
+            <div
+              class="relative h-28 rounded-xl overflow-hidden bg-surface-container shadow-md"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Close up of a telemetry sensor hardware mounted securely on a sport motorcycle aluminum triple clamp, dark cockpit glass display reflecting garage pit lane neon glow, precision engineering."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8WFveU1QN9EQdLgJMVj31lEu27FiU7u78V4k1_Q5qi7jX-B2XYbRo7TwaN3RVfQaUY24nhOvVBEDj_0smtdokZ7NoEDmh99Es9Mm4FGiHs7QvoHFWEBBP13Ryi1VSZbpx2LWMQKpmGhLJs_yqUiFqzVsTP9DyuFbJ-8I_nBIcsTZwH63BjhVld1qc-NXvQHSgKgSQ_fzggLtW0xc8drN__9pM-4WbP-0ngx2bSv0mnztKZuQEVa5x"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent flex items-end p-2"
+              >
+                <span
+                  class="font-label-sm text-[10px] text-secondary font-telemetry-md"
+                  >Presiones: 1.6R / 2.1F</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Track Map Thumbnail Reference -->
+        <div class="px-margin mt-space-md">
+          <div
+            class="relative w-full h-36 rounded-xl overflow-hidden bg-surface-container shadow-md"
+          >
+            <div
+              class="w-full h-full bg-cover bg-center"
+              data-location="Circuito de Jerez, Spain"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuALlkPrv-DT7kg3WS7oywfZnoc4TTNidsgmTCirNSP7lyezhen5KP8tokhVoTxw4KXJ1t0SUB5aMpRxfmYIDZb8uPg-kW4WBiKCzHl1khG-jXAp9P43Yg_DJ1v__ahbYRUBxkmCkMMSrIL6A3dINTMrMpzgNhVZF31cBeSg90nyfqxclC7Gj52q98zSyNz3t3JXVi-d-NCloLF1J4FKaYXSrUXU8FME4ekLZHugO11MOQSKwAayWSCX&quot;);
+              "
+            ></div>
+            <div
+              class="absolute inset-0 bg-surface-container-lowest/60 backdrop-blur-[2px] flex items-center justify-between p-space-md"
+            >
+              <div>
+                <span
+                  class="font-label-caps text-label-caps uppercase text-primary-container"
+                  >GPS Track Mapping</span
+                >
+                <h4
+                  class="font-headline-md text-headline-md text-on-surface font-bold"
+                >
+                  Circuito de Jerez - Ángel Nieto
+                </h4>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Longitud: 4.428 km • 13 Curvas (5 Izq, 8 Der)</span
+                >
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container shadow-lg"
+              >
+                <span class="material-symbols-outlined text-[20px]">map</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Action Toolbar: Data Export & Share -->
+        <div
+          class="px-margin mt-space-lg mb-space-md flex flex-col gap-space-xs"
+        >
+          <div class="grid grid-cols-2 gap-gutter">
+            <!-- Primary Export Button -->
+            <button
+              class="h-14 px-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-md text-[15px] font-bold flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(0,242,254,0.3)] active:scale-[0.98] transition-all"
+              id="export-telemetry-btn"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >download</span
+              >
+              <span>Exportar Datos</span>
+            </button>
+            <!-- Secondary Share Button -->
+            <button
+              class="h-14 px-space-md rounded-xl bg-surface-container-high text-on-surface font-headline-md text-[15px] font-bold flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all"
+              id="share-telemetry-btn"
+            >
+              <span class="material-symbols-outlined text-[20px] text-secondary"
+                >share</span
+              >
+              <span>Compartir</span>
+            </button>
+          </div>
+          <!-- Supported Export Specs Micro Tag -->
+          <div
+            class="flex items-center justify-center gap-1.5 py-1 text-center font-label-sm text-[10px] text-on-surface-variant"
+          >
+            <span class="material-symbols-outlined text-[13px] text-primary"
+              >verified</span
+            >
+            <span
+              >Formatos Compatibles: MoTeC i2 (.CSV / .LD), RaceStudio 3 (.DRK),
+              JSON crudo 100Hz</span
+            >
+          </div>
+        </div>
+        <!-- Toast Micro-Interaction Notification -->
+        <div
+          class="fixed bottom-20 inset-x-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center"
+          id="action-toast"
+        >
+          <div
+            class="bg-surface-container-highest text-on-surface px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 max-w-sm"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-[20px]"
+              id="toast-icon"
+              >check_circle</span
+            >
+            <span class="font-body-sm text-body-sm font-medium" id="toast-msg"
+              >Exportando archivo MoTeC i2...</span
+            >
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const exportBtn = document.getElementById("export-telemetry-btn");
+          const shareBtn = document.getElementById("share-telemetry-btn");
+          const sessionBtn = document.getElementById("session-select-btn");
+          const toast = document.getElementById("action-toast");
+          const toastMsg = document.getElementById("toast-msg");
+          const toastIcon = document.getElementById("toast-icon");
+
+          function showNotification(text, icon) {
+            if (!toast) return;
+            toastMsg.textContent = text;
+            toastIcon.textContent = icon || "check_circle";
+            toast.classList.remove(
+              "translate-y-20",
+              "opacity-0",
+              "pointer-events-none",
+            );
+            toast.classList.add("translate-y-0", "opacity-100");
+
+            setTimeout(() => {
+              toast.classList.add(
+                "translate-y-20",
+                "opacity-0",
+                "pointer-events-none",
+              );
+              toast.classList.remove("translate-y-0", "opacity-100");
+            }, 2600);
+          }
+
+          if (exportBtn) {
+            exportBtn.addEventListener("click", () => {
+              showNotification(
+                "Generando paquete MoTeC i2 & CSV (100Hz)...",
+                "file_download",
+              );
+            });
+          }
+
+          if (shareBtn) {
+            shareBtn.addEventListener("click", () => {
+              if (navigator.share) {
+                navigator
+                  .share({
+                    title: "ApexAngle Telemetry - Circuito de Jerez",
+                    text: "Inclinación máx: 53.8° en C6 Dry Sack. Vuelta rápida: 1:44.218",
+                    url: window.location.href,
+                  })
+                  .catch(() => {});
+              } else {
+                showNotification(
+                  "Enlace de telemetría copiado al portapapeles",
+                  "share",
+                );
+              }
+            });
+          }
+
+          if (sessionBtn) {
+            sessionBtn.addEventListener("click", () => {
+              showNotification(
+                "Cargando registros históricos de tandas...",
+                "history",
+              );
+            });
+          }
+        })();
+      </script>
+    </main>
+    <nav
+      class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.6)]"
+      data-active-classes="text-primary-container font-semibold"
+    >
+      <div
+        class="flex justify-around items-center h-16 px-gutter max-w-lg mx-auto"
+      >
+        <a
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="live"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">speed</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Live</span
+          ></a
+        ><a
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="setup"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">two_wheeler</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Setup</span
+          ></a
+        ><a
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="firmware"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]"
+            >developer_board</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Firmware</span
+          ></a
+        ><a
+          aria-current="page"
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 transition-colors text-primary-container font-semibold"
+          data-path="analytics"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">query_stats</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Analytics</span
+          ></a
+        >
+      </div>
+    </nav>
+  </body>
+</html>

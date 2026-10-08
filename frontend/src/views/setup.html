@@ -1,0 +1,1065 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="../scripts/setup.js"></script>
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          background-color: #0f131c;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#181c24",
+              outline: "#849495",
+              "on-secondary-fixed-variant": "#005236",
+              "on-surface-variant": "#b9cacb",
+              "outline-variant": "#3a494b",
+              surface: "#0f131c",
+              "secondary-fixed-dim": "#4edea3",
+              "on-error": "#690005",
+              "inverse-surface": "#dfe2ee",
+              "surface-tint": "#00dce6",
+              "primary-fixed": "#6ff6ff",
+              "tertiary-fixed": "#ffddb8",
+              "secondary-fixed": "#6ffbbe",
+              "on-secondary-container": "#00311f",
+              "tertiary-container": "#ffd3a1",
+              "on-surface": "#dfe2ee",
+              error: "#ffb4ab",
+              "primary-container": "#00f2fe",
+              "on-tertiary-container": "#875400",
+              "surface-container-lowest": "#0a0e16",
+              "primary-fixed-dim": "#00dce6",
+              background: "#0f131c",
+              "on-secondary-fixed": "#002113",
+              "surface-dim": "#0f131c",
+              "on-tertiary": "#472a00",
+              "surface-container-high": "#262a33",
+              "surface-variant": "#31353e",
+              "on-primary-fixed": "#002022",
+              "surface-bright": "#353942",
+              "on-secondary": "#003824",
+              "on-tertiary-fixed": "#2a1700",
+              "on-primary-container": "#006a70",
+              primary: "#e0fdff",
+              "on-primary": "#00373a",
+              "surface-container-highest": "#31353e",
+              "tertiary-fixed-dim": "#ffb95f",
+              "inverse-primary": "#00696f",
+              "on-background": "#dfe2ee",
+              "inverse-on-surface": "#2c3039",
+              "on-tertiary-fixed-variant": "#653e00",
+              "secondary-container": "#00a572",
+              "error-container": "#93000a",
+              secondary: "#4edea3",
+              tertiary: "#fff5ee",
+              "surface-container": "#1c2028",
+              "on-primary-fixed-variant": "#004f53",
+              "on-error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              margin: "1rem",
+              gutter: "0.75rem",
+              "space-sm": "0.5rem",
+              "space-xs": "0.25rem",
+              "space-md": "0.75rem",
+              "space-lg": "1.25rem",
+              "space-xl": "1.75rem",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "body-sm": ["Inter"],
+              "telemetry-xl": ["JetBrains Mono"],
+              "headline-md": ["Space Grotesk"],
+              "label-sm": ["JetBrains Mono"],
+              "telemetry-md": ["JetBrains Mono"],
+              "body-md": ["Inter"],
+              "display-hero": ["Space Grotesk"],
+              "display-hero-mobile": ["Space Grotesk"],
+              "headline-lg-mobile": ["Space Grotesk"],
+              "label-caps": ["JetBrains Mono"],
+              "headline-lg": ["Space Grotesk"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "telemetry-xl": [
+                "44px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "12px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "400",
+                },
+              ],
+              "telemetry-md": [
+                "20px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero": [
+                "64px",
+                {
+                  lineHeight: "68px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero-mobile": [
+                "48px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-caps": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"
+  >
+    <header
+      class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+    >
+      <div class="h-16 px-margin flex items-center justify-between">
+        <div class="flex items-center gap-space-sm">
+          <img
+            alt="ApexAngle Logo"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1W2czp8ivlVh3FJqoRtcyArMoR6UEDnJs6FDqjdnX_WKUOl2gKIg462i_Uk18xZwYTB-ul9bFDCJRaDBQ_XIM2iRWRGYNYjcJKQqsWYuTRdDkDGR5jFwe6xMaFdWlevrUamKdREDfr9azkTCXAsGkqolrAwgq9H4-ByAk9WcxnrB-RV9Bh7MUn-okndifLgNngqvw9nrk7zW38RSfcpu5J7sWP7Tni3sEvOukFOmPSBT6_Av8OP0nkdLsU"
+          />
+          <div class="flex flex-col">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-md text-headline-md font-bold tracking-tight text-primary leading-none"
+                >ApexAngle</span
+              ><span class="hidden">Setup</span>
+            </div>
+            <div class="flex items-center gap-1.5 mt-0.5">
+              <span class="relative flex h-2 w-2"
+                ><span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"
+                ></span
+                ><span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-secondary"
+                ></span></span
+              ><span
+                class="font-label-sm text-label-sm text-secondary font-telemetry-md uppercase tracking-wider"
+                >BLE: CONNECTED (100Hz)</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm">
+          <button
+            aria-label="Rider Profile"
+            class="w-11 h-11 rounded-full flex items-center justify-center bg-surface-container-high/60 backdrop-blur-md p-0.5"
+          >
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSNUUBry4d6Qg0zIjcHdis8b5-kX08q6fxnS-S3uV7B0Z0V7eKqlKr5il4gTOodgs1iVKFfqrKKJ3nlaIZvLr18Mp0iC-Nu3R4Y4OOgim10qRQJhOzH_zVoA5V3DsiFFStBADtPVXpVT8XT01qDw9rs98yPiUQ7mBVK3U2W-gC6lFSRE_8ysqOxm-aHBDCkH_U1a2wvEF8l8dL3n6jOT8Dn6LOaHmWBrf24TLiaBB0HwpPrwOMv1Uh"
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main
+      class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"
+    >
+      <div class="flex flex-col w-full">
+        <div
+          class="px-margin pt-space-md pb-space-lg flex flex-col gap-space-lg"
+        >
+          <!-- Perfil Activo Selector Bar -->
+          <div class="bg-surface-container-low rounded-xl p-space-md shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-space-md min-w-0">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary-container text-[24px]"
+                    >sports_motorsports</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="font-label-caps text-label-caps uppercase text-secondary font-semibold tracking-wider"
+                      >Perfil Activo</span
+                    >
+                    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  </div>
+                  <h1
+                    class="font-headline-md text-headline-md text-primary font-bold truncate leading-snug"
+                  >
+                    Yamaha YZF-R6
+                  </h1>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant truncate"
+                  >
+                    Trackday Config • Circuito de Jerez
+                  </p>
+                </div>
+              </div>
+              <button
+                aria-label="Cambiar perfil de moto"
+                class="min-w-[48px] min-h-[48px] px-space-md rounded-lg bg-surface-container-high text-primary flex items-center gap-1 shrink-0 font-headline-md text-body-md font-semibold active:scale-95 transition-transform"
+                id="profileSelectorBtn"
+              >
+                <span class="">Cambiar</span>
+                <span class="material-symbols-outlined text-[18px]"
+                  >expand_more</span
+                >
+              </button>
+            </div>
+            <!-- Quick Switch Drawer / Badges -->
+            <div
+              class="flex items-center gap-space-xs mt-space-md overflow-x-auto pb-1 scrollbar-none"
+            >
+              <button
+                class="min-h-[48px] px-3 py-1.5 rounded-lg bg-primary-container/15 text-primary text-body-sm font-semibold whitespace-nowrap flex items-center gap-1.5"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-primary-container"
+                  >check_circle</span
+                >
+                YZF-R6 (Pista Seco)
+              </button>
+              <button
+                class="min-h-[48px] px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant text-body-sm whitespace-nowrap flex items-center gap-1.5 hover:text-on-surface"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >two_wheeler</span
+                >
+                Ducati V2 (Lluvia)
+              </button>
+              <button
+                class="min-h-[48px] px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant text-body-sm whitespace-nowrap flex items-center gap-1.5 hover:text-on-surface"
+              >
+                <span class="material-symbols-outlined text-[16px]">add</span>
+                Nuevo Perfil
+              </button>
+            </div>
+          </div>
+          <!-- Gauge Teórico Lean Preview (Match Inspiration Image) -->
+          <div
+            class="bg-surface-container-low rounded-xl p-space-lg flex flex-col items-center shadow-lg relative overflow-hidden"
+          >
+            <div class="w-full flex items-center justify-between mb-2">
+              <div class="flex flex-col">
+                <span
+                  class="font-label-caps text-label-caps uppercase text-on-surface-variant"
+                  >Límite Calculado de Agarre</span
+                >
+                <span
+                  class="font-headline-md text-headline-md text-primary font-bold"
+                  >Fricción &amp; Vuelco</span
+                >
+              </div>
+              <div
+                class="bg-secondary-container/20 px-2.5 py-1 rounded-full flex items-center gap-1"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-[16px]"
+                  >verified</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-bold"
+                  >CALIBRADO</span
+                >
+              </div>
+            </div>
+            <!-- Circular Radial Inclinometer Preview based on inspiration image -->
+            <div
+              class="relative w-48 h-48 flex items-center justify-center my-space-xs"
+            >
+              <svg
+                class="w-full h-full transform -rotate-90"
+                viewBox="0 0 160 160"
+              >
+                <!-- Background Outer Ring -->
+                <circle
+                  cx="80"
+                  cy="80"
+                  fill="none"
+                  r="72"
+                  stroke="#1c2028"
+                  stroke-width="8"
+                ></circle>
+                <!-- Dial ticks arc -->
+                <circle
+                  cx="80"
+                  cy="80"
+                  fill="none"
+                  opacity="0.9"
+                  r="54"
+                  stroke="#00f2fe"
+                  stroke-dasharray="7 9"
+                  stroke-linecap="round"
+                  stroke-width="5"
+                ></circle>
+                <!-- Center Vertical Centerline -->
+                <line
+                  stroke="#849495"
+                  stroke-dasharray="3 3"
+                  stroke-width="2.5"
+                  x1="80"
+                  x2="80"
+                  y1="80"
+                  y2="30"
+                ></line>
+                <!-- Active Needle pointing to 54 degrees right -->
+                <!-- 54 deg = angle transformed into radial stroke -->
+                <line
+                  stroke="#00f2fe"
+                  stroke-linecap="round"
+                  stroke-width="5"
+                  x1="80"
+                  x2="120"
+                  y1="80"
+                  y2="46"
+                ></line>
+                <!-- Center Hub -->
+                <circle cx="80" cy="80" fill="#00f2fe" r="8"></circle>
+                <!-- Center inner eye -->
+                <circle cx="80" cy="80" fill="#0f131c" r="3"></circle>
+              </svg>
+              <!-- Dynamic bottom chevron indicator from screenshot -->
+              <div
+                class="absolute bottom-5 flex flex-col items-center pointer-events-none"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary mb-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3.5"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                <span
+                  class="font-label-caps text-label-caps tracking-widest text-on-surface-variant font-bold"
+                  >54° MAX</span
+                >
+              </div>
+            </div>
+            <div class="grid grid-cols-2 w-full gap-space-sm mt-space-xs">
+              <div
+                class="bg-surface-container rounded-lg p-space-sm flex flex-col items-center"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                  >Mu (μ) Est. Neumático</span
+                >
+                <span
+                  class="font-telemetry-md text-telemetry-md text-primary-container font-bold"
+                  id="coeficienteEstimado"
+                  >1.35 μ</span
+                >
+              </div>
+              <div
+                class="bg-surface-container rounded-lg p-space-sm flex flex-col items-center"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                  >Ángulo Crítico (Lean)</span
+                >
+                <span
+                  class="font-telemetry-md text-telemetry-md text-secondary font-bold" 
+                  id="maxAngle"
+                  >54.0°</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Sección 1: Parámetros Físicos y Geometría -->
+          <div class="flex flex-col gap-space-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-primary-container text-[20px]"
+                  >tune</span
+                >
+                <h2
+                  class="font-headline-md text-headline-md-mobile text-primary font-bold"
+                >
+                  Geometría y Masas
+                </h2>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant"
+                >CINEMÁTICA IMU</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-lg shadow-md"
+            >
+              <!-- Peso Moto Slider -->
+              <div class="flex flex-col gap-1.5">
+                <div class="flex justify-between items-baseline">
+                  <label
+                    class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1.5"
+                    for="bikeWeight"
+                  >
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant text-[18px]"
+                      >scale</span
+                    >
+                    Peso de la Moto (en orden de marcha)
+                  </label>
+                  <span
+                    class="font-telemetry-md text-telemetry-md text-primary-container font-bold"
+                    id="bikeWeightDisplay"
+                    >175
+                    <span
+                      class="text-body-sm font-normal text-on-surface-variant"
+                      >kg</span
+                    ></span
+                  >
+                </div>
+                <div class="relative flex items-center">
+                  <input
+                    class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container focus:outline-none"
+                    id="pesoMoto"
+                    max="300"
+                    min="100"
+                    type="range"
+                    value="175"
+                  />
+                </div>
+                <div
+                  class="flex justify-between text-label-sm font-label-sm text-on-surface-variant"
+                >
+                  <span class="">140 kg (Moto3/Supermono)</span>
+                  <span class="">260 kg (Maxi)</span>
+                </div>
+              </div>
+              <!-- Peso Piloto Slider -->
+              <div class="flex flex-col gap-1.5">
+                <div class="flex justify-between items-baseline">
+                  <label
+                    class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1.5"
+                    for="pesoPiloto"
+                  >
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant text-[18px]"
+                      >person</span
+                    >
+                    Peso Piloto (con mono, casco y botas)
+                  </label>
+                  <span
+                    class="font-telemetry-md text-telemetry-md text-primary-container font-bold"
+                    id="pesoPilotoDisplay"
+                    >78
+                    <span
+                      class="text-body-sm font-normal text-on-surface-variant"
+                      >kg</span
+                    ></span
+                  >
+                </div>
+                <div class="relative flex items-center">
+                  <input
+                    class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container focus:outline-none"
+                    id="pesoPiloto"
+                    max="160"
+                    min="40"
+                    type="range"
+                    value="78"
+                  />
+                </div>
+                <div
+                  class="flex justify-between text-label-sm font-label-sm text-on-surface-variant"
+                >
+                  <span class="">40 kg</span>
+                  <span class="">160 kg</span>
+                </div>
+              </div>
+              <!-- Grid 2 Col: CoG & Wheelbase -->
+              <div class="grid grid-cols-2 gap-space-md">
+                <!-- Centro de Gravedad -->
+                <div
+                  class="bg-surface-container rounded-lg p-space-sm flex flex-col gap-1"
+                >
+                  <label
+                    class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+                    for="alturaConPiloto"
+                    >Altura CoG Est.</label
+                  >
+                  <div class="flex items-baseline justify-between mt-1">
+                    <input
+                      class="w-20 bg-surface-container-high rounded px-2 py-1 text-primary font-telemetry-md text-telemetry-md font-bold focus:outline-none"
+                      id="alturaConPiloto"
+                      type="number"
+                      value="520"
+                      placeholder="517"
+                    />
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >mm</span
+                    >
+                  </div>
+                  <span class="font-label-sm text-label-sm text-outline mt-1"
+                    >Eje c/ piloto acoplado</span
+                  >
+                </div>
+                <!-- Wheelbase -->
+                <div
+                  class="bg-surface-container rounded-lg p-space-sm flex flex-col gap-1"
+                >
+                  <label
+                    class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+                    for="distanciaEntreEjes"
+                    >Dist. Entre Ejes</label
+                  >
+                  <div class="flex items-baseline justify-between mt-1">
+                    <input
+                      class="w-20 bg-surface-container-high rounded px-2 py-1 text-primary font-telemetry-md text-telemetry-md font-bold focus:outline-none"
+                      id="distanciaEntreEjes"
+                      type="number"
+                      value="1375"
+                    />
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >mm</span
+                    >
+                  </div>
+                  <span class="font-label-sm text-label-sm text-outline mt-1"
+                    >R6 Track: 1.375 mm</span
+                  >
+                </div>
+              </div>
+              <!-- Sensor Offset Section -->
+              <div
+                class="bg-surface-container-high rounded-xl p-space-md flex flex-col gap-space-xs"
+              >
+                <div class="flex items-center justify-between mb-1">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[20px]"
+                      >sensors</span
+                    >
+                    <span
+                      class="font-body-md text-body-md text-primary font-semibold"
+                      >Montaje del Sensor BLE (IMU)</span
+                    >
+                  </div>
+                  <span
+                    class="bg-surface-container px-2 py-0.5 rounded text-label-sm font-label-sm text-secondary"
+                    >Fijación Rígida</span
+                  >
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Ubicación actual:
+                  <strong class="text-on-surface" id="ubicacionActual"
+                    >colín</strong
+                  >
+                </p>
+                <div class="grid grid-cols-4 gap-space-sm mt-2">
+                  <div
+                    class="bg-surface-container-lowest rounded-lg p-2 flex items-center justify-between"
+                    id="ubicacion1"
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >manillar</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md font-bold text-primary-container"
+                      >X cm - Y cm</span
+                    >
+                  </div>
+                  <div
+                    class="bg-surface-container-lowest rounded-lg p-2 flex items-center justify-between"
+                    id="ubicacion2"
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Bajo asiento piloto</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md font-bold text-primary-container"
+                      >X cm - Y cm</span
+                    >
+                    </div>
+                     <div
+                    class="bg-surface-container-lowest rounded-lg p-2 flex items-center justify-between"
+                    id="ubicacion3"
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Bajo deposito/Chasis central</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md font-bold text-primary-container"
+                      >X cm - Y cm</span
+                    >
+                  </div>
+                   <div
+                    class="bg-surface-container-lowest rounded-lg p-2 flex items-center justify-between"
+                    id="ubicacion4"
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Zona del motor/Carter</span
+                    >
+                    <span
+                      class="font-telemetry-md text-body-md font-bold text-primary-container"
+                      >X cm - Y cm</span
+                    >
+                </div>
+              </div>
+            </div>
+    
+          <!-- Sección 2: Configuración de Neumáticos -->
+          <div class="flex flex-col gap-space-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-secondary text-[20px]"
+                  >radio_button_checked</span
+                >
+                <h2
+                  class="font-headline-md text-headline-md-mobile text-primary font-bold"
+                >
+                  Compuesto y Ruedas
+                </h2>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant"
+                >ESTIMADOR DE FRICCIÓN</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md shadow-md"
+            >
+              <!-- Compound Selector Tabs -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="font-body-md text-body-md text-on-surface font-medium"
+                  >Tipo de Compuesto Instalado</label
+                >
+                <div class="grid grid-cols-2 gap-2" id="compoundSelector">
+                  <button id="slickCarreras"
+                    class="min-h-[48px] p-2.5 rounded-lg bg-primary-container text-on-primary-container flex flex-col items-start transition-all font-semibold active:scale-95 shadow-sm"
+              
+                  >
+                    <span
+                      class="font-body-md text-body-md font-bold flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >sports_score</span
+                      >
+                      Slick Carreras
+                    </span>
+                    <span class="font-label-sm text-label-sm opacity-80"
+                      >μ ~1.35 • Temp &gt;80°C</span
+                    >
+                  </button>
+                  <button id="semislick"
+                    class="min-h-[48px] p-2.5 rounded-lg bg-surface-container text-on-surface flex flex-col items-start transition-all active:scale-95"
+
+                  >
+                    <span
+                      class="font-body-md text-body-md font-bold flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >speed</span
+                      >
+                      Semislick Track
+                    </span>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >μ ~1.20 • Calentador opc.</span
+                    >
+                  </button>
+                  <button id="calleDeportivo"
+                    class="min-h-[48px] p-2.5 rounded-lg bg-surface-container text-on-surface flex flex-col items-start transition-all active:scale-95"
+                  >
+                    <span
+                      class="font-body-md text-body-md font-bold flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >directions_bike</span
+                      >
+                      Deportivo Calle
+                    </span>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >μ ~1.08 • Calentamiento rápido</span
+                    >
+                  </button>
+                  <button id="sportTouring"
+                    class="min-h-[48px] p-2.5 rounded-lg bg-surface-container text-on-surface flex flex-col items-start transition-all active:scale-95"
+                    
+                 
+                  >
+                    <span
+                      class="font-body-md text-body-md font-bold flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >route</span
+                      >
+                      Sport Touring
+                    </span>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >μ ~0.95 • Larga duración</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Neumático Delantero Card -->
+              <div
+                class="bg-surface-container rounded-xl p-space-md flex flex-col gap-2"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center"
+                    >
+                      <span
+                        class="material-symbols-outlined text-primary-container text-[18px]"
+                        >album</span
+                      >
+                    </div>
+                    <span
+                      class="font-headline-md text-body-lg text-primary font-bold"
+                      >Rueda Delantera</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-caps text-label-caps text-secondary font-semibold"
+                    >Pirelli Superbike SC1</span
+                  >
+                </div>
+                <div class="grid grid-cols-2 gap-space-sm mt-1">
+                  <div class="bg-surface-container-low rounded-lg p-2">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Dimensión</span
+                    >
+                    <div
+                      class="font-telemetry-md text-body-md text-primary font-bold mt-0.5"
+                    >
+                      120/70 ZR17
+                    </div>
+                  </div>
+                  <div class="bg-surface-container-low rounded-lg p-2">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Presión en Caliente</span
+                    >
+                    <div class="flex items-baseline justify-between mt-0.5">
+                      <span
+                        class="font-telemetry-md text-telemetry-md text-secondary font-bold"
+                        >2.1</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >bar</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Neumático Trasero Card -->
+              <div
+                class="bg-surface-container rounded-xl p-space-md flex flex-col gap-2"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center"
+                    >
+                      <span
+                        class="material-symbols-outlined text-primary-container text-[18px]"
+                        >album</span
+                      >
+                    </div>
+                    <span
+                      class="font-headline-md text-body-lg text-primary font-bold"
+                      >Rueda Trasera</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-caps text-label-caps text-secondary font-semibold"
+                    >Pirelli Superbike SC2</span
+                  >
+                </div>
+                <div class="grid grid-cols-2 gap-space-sm mt-1">
+                  <div class="bg-surface-container-low rounded-lg p-2">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Dimensión</span
+                    >
+                    <div
+                      class="font-telemetry-md text-body-md text-primary font-bold mt-0.5"
+                    >
+                      180/55 ZR17
+                    </div>
+                  </div>
+                  <div class="bg-surface-container-low rounded-lg p-2">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Presión en Caliente</span
+                    >
+                    <div class="flex items-baseline justify-between mt-0.5">
+                      <span
+                        class="font-telemetry-md text-telemetry-md text-secondary font-bold"
+                        >1.6</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >bar</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sync & Save Section CTA -->
+          <div class="sticky bottom-20 z-40 pt-space-xs">
+            <button
+              class="w-full min-h-[56px] py-3.5 px-space-lg rounded-xl bg-primary-container text-on-primary-container font-headline-md text-body-lg font-bold shadow-[0_8px_24px_rgba(0,242,254,0.3)] flex items-center justify-center gap-space-md active:scale-[0.98] transition-all"
+              id="syncButton"
+            >
+              <span class="material-symbols-outlined text-[24px]" id="syncIcon"
+                >sync</span
+              >
+              <span id="syncText" class=""
+                >Sincronizar Parámetros con el Sensor</span
+              >
+            </button>
+            <div class="text-center mt-2">
+              <span class="font-label-sm text-label-sm text-on-surface-variant"
+                >Última calibración de cero: Hoy 10:42h • IMU 100Hz OK</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        // Micro interactions for sliders and compound select
+        const bikeSlider = document.getElementById("bikeWeight");
+        const bikeDisplay = document.getElementById("bikeWeightDisplay");
+        if (bikeSlider && bikeDisplay) {
+          bikeSlider.addEventListener("input", (e) => {
+            bikeDisplay.innerHTML = `${e.target.value} <span class="text-body-sm font-normal text-on-surface-variant">kg</span>`;
+          });
+        }
+
+        const riderSlider = document.getElementById("riderWeight");
+        const riderDisplay = document.getElementById("riderWeightDisplay");
+        if (riderSlider && riderDisplay) {
+          riderSlider.addEventListener("input", (e) => {
+            riderDisplay.innerHTML = `${e.target.value} <span class="text-body-sm font-normal text-on-surface-variant">kg</span>`;
+          });
+        }
+
+        // Compound buttons
+        const compoundButtons = document.querySelectorAll(
+          "#compoundSelector button",
+        );
+        compoundButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            compoundButtons.forEach((b) => {
+              b.className =
+                "min-h-[48px] p-2.5 rounded-lg bg-surface-container text-on-surface flex flex-col items-start transition-all active:scale-95";
+              const sub = b.querySelector("span:last-child");
+              if (sub)
+                sub.className =
+                  "font-label-sm text-label-sm text-on-surface-variant";
+            });
+            btn.className =
+              "min-h-[48px] p-2.5 rounded-lg bg-primary-container text-on-primary-container flex flex-col items-start transition-all font-semibold active:scale-95 shadow-sm";
+            const subActive = btn.querySelector("span:last-child");
+            if (subActive)
+              subActive.className = "font-label-sm text-label-sm opacity-80";
+          });
+        });
+
+        // Sync animation simulation
+        const syncBtn = document.getElementById("syncButton");
+        const syncIcon = document.getElementById("syncIcon");
+        const syncText = document.getElementById("syncText");
+        if (syncBtn && syncIcon && syncText) {
+          syncBtn.addEventListener("click", () => {
+            syncIcon.classList.add("animate-spin");
+            syncText.innerText = "Enviando telemetría BLE...";
+            syncBtn.classList.add("opacity-90");
+            setTimeout(() => {
+              syncIcon.classList.remove("animate-spin");
+              syncIcon.innerText = "done_all";
+              syncText.innerText = "¡Parámetros Sincronizados!";
+              syncBtn.classList.remove(
+                "bg-primary-container",
+                "text-on-primary-container",
+              );
+              syncBtn.classList.add("bg-secondary", "text-on-secondary-fixed");
+              setTimeout(() => {
+                syncIcon.innerText = "sync";
+                syncText.innerText = "Sincronizar Parámetros con el Sensor";
+                syncBtn.classList.remove(
+                  "bg-secondary",
+                  "text-on-secondary-fixed",
+                );
+                syncBtn.classList.add(
+                  "bg-primary-container",
+                  "text-on-primary-container",
+                );
+                syncBtn.classList.remove("opacity-90");
+              }, 2200);
+            }, 1000);
+          });
+        }
+      </script>
+    </main>
+    <nav
+      class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.6)]"
+      data-active-classes="text-primary-container font-semibold"
+    >
+      <div
+        class="flex justify-around items-center h-16 px-gutter max-w-lg mx-auto"
+      >
+        <a
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="live"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">speed</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Live</span
+          ></a
+        ><a
+          aria-current="page"
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 transition-colors text-primary-container font-semibold"
+          data-path="setup"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">two_wheeler</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Setup</span
+          ></a
+        ><a
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="firmware"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]"
+            >developer_board</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Firmware</span
+          ></a
+        ><a
+          class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="analytics"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">query_stats</span
+          ><span
+            class="font-label-caps text-label-caps uppercase tracking-wider"
+            >Analytics</span
+          ></a
+        >
+      </div>
+    </nav>
+  </body>
+</html>
